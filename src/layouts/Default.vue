@@ -1,39 +1,63 @@
 <template>
   <div>
-
-    <nav class="bg-gray-800 fixed right-0 left-0 top-0 z-10 shadow">
+    <nav class="bg-gray-800 w-full fixed right-0 left-0 top-0 z-10 shadow">
       <div class="container fluid px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
-        <div class="flex items-center justify-between">
+        <div class="flex items-center">
           <div>
-            <a class="text-2xl font-bold transition-colors duration-200 transform text-white lg:text-3xl hover:text-gray-300" href="#">Dylan Delbauve</a>
-          </div>
-
-          <!-- Mobile menu button -->
-          <div class="flex md:hidden">
-            <button type="button" class="text-gray-200 hover:text-gray-400 focus:outline-none focus:text-gray-400" aria-label="toggle menu">
-              <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
-                <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
-              </svg>
-            </button>
+            <g-link class="text-2xl font-bold transition-colors duration-200 transform text-white lg:text-3xl hover:text-gray-300" to="/">Dylan Delbauve</g-link>
           </div>
         </div>
 
-        <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
         <div class="items-center md:flex">
           <div class="flex flex-col md:flex-row md:mx-6">
-            <a class="my-1 text-sm font-medium transition-colors duration-200 transform text-gray-200 hover:text-blue-400 md:mx-4 md:my-0" href="#">Projets</a>
-            <a class="my-1 text-sm font-medium transition-colors duration-200 transform text-gray-200 hover:text-blue-400 md:mx-4 md:my-0" href="#">Créations</a>
-            <a class="my-1 text-sm font-medium transition-colors duration-200 transform text-gray-200 hover:text-blue-400 md:mx-4 md:my-0" href="#">Contact</a>
+            <g-link to="/projects/" class="my-1 text-sm font-medium transition-colors duration-200 transform text-gray-200 md:mx-4 md:my-0 hover:text-gray-400 transition" href="#">Projets</g-link>
+            <g-link tp="/creations/" class="my-1 text-sm font-medium transition-colors duration-200 transform text-gray-200  md:mx-4 md:my-0 hover:text-gray-400 transition" href="#">Créations</g-link>
+            <a class="my-1 text-sm font-medium transition-colors duration-200 transform text-gray-200 md:mx-4 md:my-0 hover:text-gray-400 transition" href="#">Contact</a>
           </div>
         </div>
       </div>
     </nav>
 
-    <slot/>
+    <slot />
 
+    <footer class="bg-gray-800 w-full fixed right-0 left-0 bottom-0 z-10 shadow">
+      <div class="container fluid py-4 mx-auto md:flex justify-between">
+        <p class="text-white font-bold">Dylan Delbauve - {{ year }}</p>
+        <p class="text-white">Made with GridSome and love</p>
+        <div class="flex gap-4">
+          <i class="h-5 w-5 text-white hover:text-gray-400"><a href="https://www.instagram.com/dylan_dlbv/" target="_blank"><Instagram/></a></i>
+          <i class="h-5 w-5 text-white hover:text-gray-400"><a href="https://www.linkedin.com/in/dylandelbauve/" target="_blank"><Linkedin/></a></i>
+          <i class="h-5 w-5 text-white hover:text-gray-400"><a href="https://github.com/DylanDelbauve" target="_blank"><Github/></a></i>
+          <i class="h-5 w-5 text-white hover:text-gray-400"><a href="mailto:dylandelbauve@gmail.com"><Mail/></a></i>
+        </div>
+      </div>
+    </footer>
 
   </div>
 </template>
+
+<script>
+
+import Mail from '../assets/svg/Mail.svg';
+import Github from '../assets/svg/Github.svg';
+import Linkedin from '../assets/svg/Linkedin.svg';
+import Instagram from '../assets/svg/Instagram.svg';
+
+export default {
+  computed: {
+    year: function() {
+      const d = new Date(Date.now());
+      return d.getFullYear();
+    }
+  },
+  components: {
+    Mail,
+    Github,
+    Instagram,
+    Linkedin
+  }
+}
+</script>
 
 <style>
 </style>

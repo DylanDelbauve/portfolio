@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Gridsome',
+  siteName: 'Dylan Delbauve',
   plugins: [
     {
       use: "gridsome-plugin-tailwindcss2",
@@ -15,5 +15,12 @@ module.exports = {
         shouldImport: true
       }
     },
-  ]
+  ],
+  chainWebpack: config => {
+    const svgRule = config.module.rule('svg')
+    svgRule.uses.clear()
+    svgRule
+        .use('vue-svg-loader')
+        .loader('vue-svg-loader')
+  }
 }
