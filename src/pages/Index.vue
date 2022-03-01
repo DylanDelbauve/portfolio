@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div class="w-screen">
+    <div class="w-screen h-screen bg-gray-800">
       <div class="h-screen w-full flex justify-center items-center bg-gray-800">
         <div id="particles-js" class="h-screen w-full absolute top-0 left-0 right-0"></div>
         <div class="flex flex-row justify-center items-center space-x-3">
@@ -15,15 +15,17 @@
           </div>
         </div>
       </div>
+    </div>
 
+    <div class="w-screen h-screen bg-gray-700 p-12">
+      <div class="grid grid-cols-3 shadow-xl rounded-3xl">
+      </div>
     </div>
 
   </Layout>
 </template>
 
 <script>
-
-import Skill from "../components/Skill.vue";
 
 require('particles.js');
 const parameters = require('../assets/particles.json');
@@ -33,7 +35,6 @@ particlesJS.load = function(tag_id) {
 
 export default {
   components: {
-    Skill
   },
 
   metaInfo: {
