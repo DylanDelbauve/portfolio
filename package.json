@@ -7,7 +7,10 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
-    "gridsome": "^0.7.0"
+    "@tailwindcss/line-clamp": "^0.3.1",
+    "fs": "^0.0.1-security",
+    "gridsome": "^0.7.0",
+    "particles.js": "^2.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",

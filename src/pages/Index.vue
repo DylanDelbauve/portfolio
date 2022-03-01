@@ -1,27 +1,41 @@
 <template>
   <Layout>
+    <div class="h-screen w-screen flex justify-center items-center bg-gray-800">
+      <div id="particles-js" class="h-screen w-screen absolute top-0 left-0"></div>
+        <div class="flex flex-row w-full h-fit justify-center items-center space-x-3">
+          <div class="w-1/3">
+            <p class="text-right text-white text-5xl">Développeur Back-end et (un peu front-end)</p>
+          </div>
+          <div class="p-4">
+            <div class="bg-white h-48 w-1"></div>
+          </div>
+          <div class="w-1/3">
+            <h1 class="text-left text-white text-8xl font-bold">Dylan Delbauve</h1>
+          </div>
+        </div>
+    </div>
 
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
 
-    <h1>Hello, world!</h1>
-
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
-
-    <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
 
   </Layout>
 </template>
 
 <script>
+
+require('particles.js');
+const parameters = require('../assets/particles.json');
+/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+particlesJS.load = function(tag_id) {
+  window.particlesJS(tag_id, parameters);
+  console.log(parameters);
+}
+
 export default {
   metaInfo: {
     title: 'Hello, world!'
+  },
+  mounted() {
+    particlesJS.load('particles-js');
   }
 }
 </script>
