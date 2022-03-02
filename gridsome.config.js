@@ -6,6 +6,14 @@
 
 module.exports = {
   siteName: 'Dylan Delbauve',
+  templates: {
+    StrapiProjects: [
+      {
+        path: '/projects/:id',
+        component: './src/templates/Project.vue'
+      }
+    ]
+  },
   plugins: [
     {
       use: "gridsome-plugin-tailwindcss2",
@@ -20,7 +28,7 @@ module.exports = {
       options: {
         apiURL: 'http://localhost:1337',
         queryLimit: 1000, // Defaults to 100
-        contentTypes: ['skills'],
+        contentTypes: ['skills', 'projects'],
         singleTypes: [],
         // Possibility to login with a Strapi user,
         // when content types are not publicly available (optional).

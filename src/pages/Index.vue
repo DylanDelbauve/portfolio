@@ -24,12 +24,33 @@
       </div>
     </div>
 
+    <div class="w-screen h-full bg-gray-700">
+      <h1 class="p-8 text-white text-5xl font-bold">Les derniers projets ajoutés</h1>
+      <div class="w-screen h-full overflow-x-scroll no-scrollbar">
+        <div class=" flex flex-nowrap gap-8 p-8">
+          <Project v-for="project in $page.projects.edges" :project=project.node :key="project.node.id" />
+          <div class="inline-block">
+            <div class="h-96 w-80 overflow-hidden rounded-3xl shadow-2xl transition bg-gray-800 flex flex-col gap-6 justify-center items-center">
+              <h2 class="text-white font-bold">En voir plus ?</h2>
+              <g-link to="/projects/" class="shadow-md mx-auto p-2 bg-gray-800 shadow-2xl hover:bg-gray-700 hover:scale-125 transition rounded-3xl">
+                <i class="h-6 w-6">
+                  <ArrowRight class="h-6 w-6 text-white font-bold text-xl"/>
+                </i>
+              </g-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </Layout>
 </template>
 
 <script>
 
 import Skill from "../components/Skill.vue";
+import Project from "../components/Project";
+import ArrowRight from "../assets/svg/Arrow-Right.svg";
 
 require('particles.js');
 const parameters = require('../assets/particles.json');
@@ -38,7 +59,9 @@ particlesJS.load = function (tag_id) {
 }
 export default {
   components: {
-    Skill
+    Skill,
+    Project,
+    ArrowRight
   },
 
   metaInfo: {
@@ -52,14 +75,24 @@ export default {
 
 <page-query>
 query {
-skills: allStrapiSkills {
-edges {
-node {
-data {
-name, array
-}
-}
-}
-}
+  skills: allStrapiSkills {
+    edges {
+      node {
+        data {
+          name, array
+        }
+      }
+    }
+  },
+  projects: allStrapiProjects(limit: 5) {
+    edges {
+      node {
+        id,
+        title,
+        slug,
+        thumbnail { url, width }
+      }
+    }
+  }
 }
 </page-query>
