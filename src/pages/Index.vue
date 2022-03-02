@@ -17,8 +17,10 @@
       </div>
     </div>
 
-    <div class="w-screen h-screen bg-gray-700 p-12">
-      <div class="grid grid-cols-3 shadow-xl rounded-3xl">
+    <div class="w-screen h-full bg-gray-700 p-12">
+      <h1 class="text-white text-5xl font-bold pb-8 pl-5">Compétences</h1>
+      <div class="md:grid md:grid-cols-3 auto-cols-max p-4 gap-2">
+        <Skill v-for="skill in $page.skills.edges" :key="skill.node.id" :skill=skill.node />
       </div>
     </div>
 
@@ -27,14 +29,16 @@
 
 <script>
 
+import Skill from "../components/Skill.vue";
+
 require('particles.js');
 const parameters = require('../assets/particles.json');
-particlesJS.load = function(tag_id) {
+particlesJS.load = function (tag_id) {
   window.particlesJS(tag_id, parameters);
 }
-
 export default {
   components: {
+    Skill
   },
 
   metaInfo: {
@@ -46,8 +50,16 @@ export default {
 }
 </script>
 
-<style>
-.home-links a {
-  margin-right: 1rem;
+<page-query>
+query {
+skills: allStrapiSkills {
+edges {
+node {
+data {
+name, array
 }
-</style>
+}
+}
+}
+}
+</page-query>

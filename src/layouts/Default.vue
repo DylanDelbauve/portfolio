@@ -22,7 +22,7 @@
 
     <footer class="bg-gray-800 w-screen h-16 z-10 shadow my-auto">
       <div class="container fluid h-full py-4 mx-auto md:flex justify-between items-center">
-        <p class="text-white font-bold">Dylan Delbauve - {{ year }}</p>
+        <p class="text-white font-bold">Dylan Delbauve - {{ year }} ©</p>
         <div class="flex gap-2 justify-center center">
           <p class="text-white">Made with <a href="">GridSome</a> and </p>
           <Heart class="text-pink-700 w-6 h-6" />

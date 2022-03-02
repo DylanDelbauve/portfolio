@@ -15,6 +15,21 @@ module.exports = {
         shouldImport: true
       }
     },
+    {
+      use: '@gridsome/source-strapi',
+      options: {
+        apiURL: 'http://localhost:1337',
+        queryLimit: 1000, // Defaults to 100
+        contentTypes: ['skills'],
+        singleTypes: [],
+        // Possibility to login with a Strapi user,
+        // when content types are not publicly available (optional).
+        loginData: {
+          identifier: '',
+          password: ''
+        }
+      }
+    }
   ],
   chainWebpack: config => {
     const svgRule = config.module.rule('svg')
