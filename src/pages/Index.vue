@@ -11,28 +11,28 @@
             <div class="bg-white md:h-48 h-24 w-1"></div>
           </div>
           <div class="md:w-1/3 w-1/4">
-            <h1 class="text-left text-white md:text-8xl font-bold">Dylan Delbauve</h1>
+            <h1 class="text-left text-white text-3xl lg:text-8xl md:text-7xl font-bold">Dylan Delbauve</h1>
           </div>
         </div>
       </div>
     </div>
 
     <div class="w-screen h-full bg-gray-700 p-12">
-      <h1 class="text-white text-5xl font-bold pb-8 pl-5">Compétences</h1>
-      <div class="md:grid md:grid-cols-3 auto-cols-max p-4 gap-2">
+      <h1 class="text-white text-3xl md:text-5xl font-bold pb-8 pl-5">Compétences</h1>
+      <div class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 md:auto-cols-max p-4 gap-2">
         <Skill v-for="skill in $page.skills.edges" :key="skill.node.id" :skill=skill.node />
       </div>
     </div>
 
     <div class="w-screen h-full bg-gray-700">
-      <h1 class="p-8 text-white text-5xl font-bold">Les derniers projets ajoutés</h1>
+      <h1 class="pb-8 pl-16 break-words text-white text-3xl md:text-5xl font-bold">Les derniers projets ajoutés</h1>
       <div class="w-screen h-full overflow-x-scroll no-scrollbar">
-        <div class=" flex flex-nowrap gap-8 p-8">
+        <div class=" flex flex-nowrap gap-8 p-12">
           <Project v-for="project in $page.projects.edges" :project=project.node :key="project.node.id" />
           <div class="inline-block">
             <div class="h-96 w-80 overflow-hidden rounded-3xl shadow-2xl transition bg-gray-800 flex flex-col gap-6 justify-center items-center">
               <h2 class="text-white font-bold">En voir plus ?</h2>
-              <g-link to="/projects/" class="shadow-md mx-auto p-2 bg-gray-800 shadow-2xl hover:bg-gray-700 hover:scale-125 transition rounded-3xl">
+              <g-link to="/projects/" class=" shadow-md mx-auto p-2 bg-gray-800 shadow-2xl hover:bg-gray-700 hover:scale-125 transition rounded-3xl">
                 <i class="h-6 w-6">
                   <ArrowRight class="h-6 w-6 text-white font-bold text-xl"/>
                 </i>
