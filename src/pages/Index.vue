@@ -4,14 +4,14 @@
       <div class="h-screen w-full flex justify-center items-center bg-gray-800">
         <div id="particles-js" class="h-screen w-full absolute top-0 left-0 right-0"></div>
         <div class="flex flex-row justify-center items-center space-x-3">
-          <div class="w-1/3">
-            <p class="text-right text-white text-5xl">Développeur Back-end et (un peu front-end)</p>
+          <div class="md:w-1/3 w-1/4">
+            <p class="text-right text-white md:text-5xl">Développeur Back-end et (un peu front-end)</p>
           </div>
           <div class="p-4">
-            <div class="bg-white h-48 w-1"></div>
+            <div class="bg-white md:h-48 h-24 w-1"></div>
           </div>
-          <div class="w-1/3">
-            <h1 class="text-left text-white text-8xl font-bold">Dylan Delbauve</h1>
+          <div class="md:w-1/3 w-1/4">
+            <h1 class="text-left text-white md:text-8xl font-bold">Dylan Delbauve</h1>
           </div>
         </div>
       </div>

@@ -25,7 +25,7 @@
         <p class="text-white font-bold">Dylan Delbauve - {{ year }} ©</p>
         <div class="flex gap-2 justify-center center">
           <p class="text-white">Made with <a href="">GridSome</a> and </p>
-          <Heart class="text-pink-700 w-6 h-6" />
+          <Heart class="text-pink-700 w-6 h-6 fill-pink-700" />
         </div>
         <div class="flex gap-4 min-h-min max-h-fit">
           <i class="h-5 w-5 text-white hover:text-gray-400"><a href="https://www.instagram.com/dylan_dlbv/" target="_blank"><Instagram class="h-6 w-6"/></a></i>
