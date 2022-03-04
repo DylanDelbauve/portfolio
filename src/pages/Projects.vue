@@ -10,7 +10,7 @@
               <div class="w-full mx-auto flex flex-wrap break-wrap text-ellipsis gap-2 md:gap-4 items-center">
                 <h1 class="text-white w-fit whitespace-normal font-bold lg:text-5xl md:text-3xl align-middle" v-html="project.node.title"></h1>
                 <div class="w-fit flex gap-1 md:gap-4">
-                  <p v-for="tag in project.node.tag" :key="tag.label" class="scale-75 bg-sky-800 md:scale-100 py-2 px-4 bg-gray-600 rounded-full text-white font-bold shadow" activeLinkClass="bg-sky-800">
+                  <p v-for="tag in project.node.tag" :key="tag.label" class="scale-75 bg-sky-800 md:scale-100 py-2 px-4 bg-gray-600 rounded-full text-white font-bold shadow">
                     {{tag.label}}
                   </p>
                 </div>
@@ -22,7 +22,7 @@
           </g-link>
         </div>
           <div class="w-screen flex justify-center pt-16 flex">
-            <Pager :info="$page.projects.pageInfo" class="text-white flex gap-4" linkClass="font-bold px-4 py-2 hover:bg-sky-800 hover:scale-125 hover:flex-shrike transition bg-gray-700 rounded-xl shadow mx-auto"/>
+            <Pager :info="$page.projects.pageInfo" class="text-white flex gap-4" linkClass="font-bold px-4 py-2 hover:bg-sky-800 hover:scale-125 hover:flex-shrike transition bg-gray-700 rounded-xl shadow mx-auto" activeLinkClass="bg-sky-900"/>
           </div>
       </div>
   </Layout>
