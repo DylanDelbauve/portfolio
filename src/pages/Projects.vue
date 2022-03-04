@@ -2,7 +2,7 @@
   <Layout>
       <div class="w-screen h-full min-h-screen bg-gray-800 py-8 md:py-24 overflow-x-hidden">
         <div class="w-full h-full flex flex-col items-center pt-24 gap-4 md:gap-8 p-4 md:p-0">
-          <g-link class="w-full md:w-3/5 h-max md:h-60 bg-gray-700 rounded-2xl shadow-md flex flex-col md:flex-row" v-for="project in $page.projects.edges" :key="project.node.id" :to="{ path: '/projects/' + project.node.id}">
+          <g-link class="w-full md:w-3/5 h-max md:h-60 bg-gray-700 rounded-2xl shadow-md flex flex-col md:flex-row" v-for="project in $page.projects.edges" :key="project.node.id" :to="{ path: '/projects/project/' + project.node.id}">
             <div class="h-full aspect-square">
               <g-image :src="getStrapiMedia(project.node.thumbnail.url)" width="300" class=" md:h-full aspect-square rounded-t-2xl md:rounded-tr-none  md:rounded-l-2xl object-cover"/>
             </div>
@@ -10,7 +10,7 @@
               <div class="w-full mx-auto flex flex-wrap break-wrap text-ellipsis gap-2 md:gap-4 items-center">
                 <h1 class="text-white w-fit whitespace-normal font-bold lg:text-5xl md:text-3xl align-middle" v-html="project.node.title"></h1>
                 <div class="w-fit flex gap-1 md:gap-4">
-                  <p v-for="tag in project.node.tag" :key="tag.label" class="scale-75 bg-sky-800 md:scale-100 py-2 px-4 bg-gray-600 rounded-full text-white font-bold shadow">
+                  <p v-for="tag in project.node.tag" :key="tag.label" class="scale-75 bg-sky-800 md:scale-100 py-2 px-4 bg-gray-600 rounded-full text-white font-bold shadow" activeLinkClass="bg-sky-800">
                     {{tag.label}}
                   </p>
                 </div>
@@ -21,15 +21,21 @@
             </div>
           </g-link>
         </div>
+          <div class="w-screen flex justify-center pt-16 flex">
+            <Pager :info="$page.projects.pageInfo" class="text-white flex gap-4" linkClass="font-bold px-4 py-2 hover:bg-sky-800 hover:scale-125 hover:flex-shrike transition bg-gray-700 rounded-xl shadow mx-auto"/>
+          </div>
       </div>
   </Layout>
 </template>
 
 <script>
 import {getStrapiMedia} from "../utils/medias";
-
+import { Pager } from "gridsome";
 export default {
   name: "Projects",
+  components: {
+    Pager
+  },
   methods: {
     getStrapiMedia
   }
@@ -37,8 +43,12 @@ export default {
 </script>
 
 <page-query>
-query {
-projects: allStrapiProjects(limit: 5) {
+query($page: Int) {
+projects: allStrapiProjects(perPage: 10, page: $page) @paginate {
+pageInfo {
+totalPages
+currentPage
+}
 edges {
 node {
 id,

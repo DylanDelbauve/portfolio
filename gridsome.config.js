@@ -9,7 +9,7 @@ module.exports = {
   templates: {
     StrapiProjects: [
       {
-        path: '/projects/:id',
+        path: '/projects/project/:id',
         component: './src/templates/Project.vue'
       }
     ]
