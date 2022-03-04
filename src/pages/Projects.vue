@@ -6,8 +6,15 @@
             <div class="h-full aspect-square">
               <g-image :src="getStrapiMedia(project.node.thumbnail.url)" width="300" class=" md:h-full aspect-square rounded-t-2xl md:rounded-tr-none  md:rounded-l-2xl object-cover"/>
             </div>
-            <div class="w-full h-full py-2 px-4 md:p-8 text-ellipsis">
-              <h1 class="text-white font-bold lg:text-5xl md:text-3xl align-middle">{{ project.node.title }}</h1>
+            <div class="w-full h-full py-2 px-4 md:p-8 flex flex-col gap-2">
+              <div class="w-full mx-auto flex flex-wrap break-wrap text-ellipsis gap-2 md:gap-4 items-center">
+                <h1 class="text-white w-fit whitespace-normal font-bold lg:text-5xl md:text-3xl align-middle" v-html="project.node.title"></h1>
+                <div class="w-fit flex gap-1 md:gap-4">
+                  <p v-for="tag in project.node.tag" :key="tag.label" class="scale-75 bg-sky-800 md:scale-100 py-2 px-4 bg-gray-600 rounded-full text-white font-bold shadow">
+                    {{tag.label}}
+                  </p>
+                </div>
+              </div>
               <p class="h-full w-full text-white ">
                 {{ project.node.short }}
               </p>
@@ -37,7 +44,8 @@ node {
 id,
 title,
 short,
-thumbnail { url, width }
+thumbnail { url, width },
+tag { label }
 }
 }
 }
