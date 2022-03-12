@@ -17,9 +17,9 @@
       </div>
     </div>
 
-    <div class="w-screen h-full bg-gray-700 p-12">
-      <h1 class="text-white text-3xl md:text-5xl font-bold pb-8 pl-5">Compétences</h1>
-      <div class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 md:auto-cols-max p-4 gap-2">
+    <div class="w-screen h-full bg-gray-700 py-12">
+      <h1 class="pb-8 pl-16 break-words text-white text-3xl md:text-5xl font-bold">Compétences</h1>
+      <div class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 md:auto-cols-max p-4 gap-2 px-12">
         <Skill v-for="skill in $page.skills.edges" :key="skill.node.id" :skill=skill.node />
       </div>
     </div>
@@ -52,11 +52,6 @@ import Skill from "../components/Skill.vue";
 import Project from "../components/Project";
 import ArrowRight from "../assets/svg/Arrow-Right.svg";
 
-require('particles.js');
-const parameters = require('../assets/particles.json');
-particlesJS.load = function (tag_id) {
-  window.particlesJS(tag_id, parameters);
-}
 export default {
   components: {
     Skill,
@@ -68,6 +63,11 @@ export default {
     title: 'Portfolio'
   },
   mounted() {
+    require('particles.js');
+    const parameters = require('../assets/particles.json');
+    particlesJS.load = function (tag_id) {
+      window.particlesJS(tag_id, parameters);
+    }
     particlesJS.load('particles-js');
   }
 }

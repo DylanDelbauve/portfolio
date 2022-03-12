@@ -1,6 +1,6 @@
 <template>
   <div class="inline-block">
-    <div class="h-96 w-80 overflow-hidden rounded-3xl shadow-xl transition hover:shadow-2xl hover:-translate-y-3 group">
+    <div class="h-96 w-80 overflow-hidden rounded-3xl shadow-xl transition hover:shadow-2xl hover:-translate-y-3 group bg-gray-800">
       <div class="w-full h-3/5">
         <g-image :src="getStrapiMedia(project.thumbnail.url)" width="80" class="h-full w-full object-cover"/>
       </div>
