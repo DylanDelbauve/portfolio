@@ -6,6 +6,7 @@
 
 module.exports = {
   siteName: 'Dylan Delbauve',
+  icon: './favicon.png',
   templates: {
     StrapiProjects: [
       {

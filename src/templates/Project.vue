@@ -15,7 +15,7 @@
             </p>
           </div>
         </div>
-        <p class="text-white break-words text-lg md:text-2xl"><VueShowdown id="Text" :markdown="$page.project.description" :extensions="['ext']" /></p>
+        <p class="text-white break-words text-lg md:text-2xl"><VueShowdown :markdown="$page.project.description" :extensions="['ext']" /></p>
       </div>
     </div>
 
@@ -69,11 +69,3 @@ links {github}
 }
 }
 </page-query>
-
-<style scoped>
-@layer components {
-  #Text {
-    font-size: xxx-large;
-  }
-}
-</style>
