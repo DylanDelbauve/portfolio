@@ -10,8 +10,8 @@
 
         <div class="items-center md:flex">
           <div class="flex flex-row justify-around md:justify-end md:mx-6">
-            <g-link to="/projects/" class="my-1 text-sm font-medium transition-colors duration-200 transform text-gray-200 md:mx-4 md:my-0 hover:text-gray-400 focus:outline-none transition" href="#">Projets</g-link>
-            <g-link tp="/creations/" class="my-1 text-sm font-medium transition-colors duration-200 transform text-gray-200  md:mx-4 md:my-0 hover:text-gray-400 focus:outline-none transition" href="#">Créations</g-link>
+            <g-link to="/projects/" class="my-1 text-sm font-medium transition-colors duration-200 transform text-gray-200 md:mx-4 md:my-0 hover:text-gray-400 focus:outline-none transition" href="/projects/">Projets</g-link>
+            <g-link to="/creations/" class="my-1 text-sm font-medium transition-colors duration-200 transform text-gray-200  md:mx-4 md:my-0 hover:text-gray-400 focus:outline-none transition" href="/creations/">Créations</g-link>
             <a class="my-1 text-sm font-medium transition-colors duration-200 transform text-gray-200 md:mx-4 md:my-0 hover:text-gray-400 focus:outline-none transition" href="#">Contact</a>
           </div>
         </div>

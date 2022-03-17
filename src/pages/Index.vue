@@ -5,13 +5,17 @@
         <div id="particles-js" class="h-screen w-full absolute top-0 left-0 right-0"></div>
         <div class="flex flex-row justify-center items-center space-x-3">
           <div class="md:w-1/3 w-1/4">
-            <p class="text-right text-white md:text-5xl">Développeur Back-end et (un peu front-end)</p>
+            <p class="text-right text-white md:text-5xl slideFromLeft">Développeur Back-end et (un peu front-end)</p>
           </div>
           <div class="p-4">
-            <div class="bg-white md:h-48 h-24 w-1"></div>
+            <div  class="md:h-48 h-24 w-1">
+              <div id="separator" class="w-1 h-full bg-white">
+
+              </div>
+            </div>
           </div>
           <div class="md:w-1/3 w-1/4">
-            <h1 class="text-left text-white text-3xl lg:text-8xl md:text-7xl font-bold">Dylan Delbauve</h1>
+            <h1 id="name" class="text-left text-white text-3xl lg:text-8xl md:text-7xl font-bold">Dylan Delbauve</h1>
           </div>
         </div>
       </div>
@@ -26,7 +30,7 @@
 
     <div class="w-screen h-full bg-gray-700">
       <h1 class="pb-8 pl-16 break-words text-white text-3xl md:text-5xl font-bold">Les derniers projets ajoutés</h1>
-      <div class="w-screen h-full overflow-x-scroll no-scrollbar">
+      <div class="w-screen h-full overflow-x-scroll scrollbar-thight scroll-smooth overscroll-none">
         <div class=" flex flex-nowrap gap-8 p-12">
           <Project v-for="project in $page.projects.edges" :project=project.node :key="project.node.id" />
           <div class="inline-block">
@@ -72,6 +76,63 @@ export default {
   }
 }
 </script>
+
+<style lang="css">
+  #name {
+    animation-name: slideRight;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    transition: ease-out;
+  }
+
+  .slideFromLeft{
+    animation-name: slideLeft;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    transition: ease-out;
+  }
+
+  #separator {
+    animation-name: grow;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-delay: 1.5s;
+    animation-fill-mode: backwards;
+    transition: ease-out;
+  }
+  
+  @keyframes slideRight {
+    from {
+      position: relative;
+      left: 100vw;
+    }
+    to {
+      position: relative;
+      left: 0vw;
+    }
+  }
+
+  @keyframes slideLeft {
+    from {
+      position: relative;
+      right: 100vw;
+    }
+    to {
+      position: relative;
+      right: 0vw;
+    }
+  }
+
+  @keyframes grow {
+    0% {
+      transform: scaleY(0%);
+    }
+    100% {
+      transform: scaleY(100%);
+    }
+  }
+</style>
 
 <page-query>
 query {
