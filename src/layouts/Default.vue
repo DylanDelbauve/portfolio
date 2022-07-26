@@ -1,6 +1,7 @@
 <template>
-  <div class="w-screen h-full bg-gray-800 min-h-screen flex flex-col">
-    <nav class="bg-gray-800 w-full fixed right-0 left-0 top-0 z-30 shadow">
+
+  <div class="w-screen h-full bg-gray-900 min-h-screen flex flex-col">
+    <nav class="bg-gray-900 w-full fixed right-0 left-0 top-0 z-30 shadow">
       <div class="container fluid px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
         <div class="flex items-center">
           <div>
@@ -20,7 +21,7 @@
 
     <slot />
 
-    <footer class="w-screen bg-gray-800 z-30 h-min my-auto">
+    <footer class="w-screen bg-gray-900 z-30 h-min my-auto">
       <div class="w-full h-full px-8 py-4 mx-auto flex sm:flex-row flex-col gap-4 md:gap-0 justify-between items-center">
         <p class="text-white order-1 font-bold">Dylan Delbauve - {{ year }} ©</p>
         <div class="flex gap-2 sm:order-2 order-3 justify-center center">
