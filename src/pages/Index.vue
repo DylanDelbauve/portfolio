@@ -1,7 +1,7 @@
 <template>
   <Layout>
-    <div class="w-screen h-screen bg-gray-800">
-      <div class="h-screen w-full flex justify-center items-center bg-gray-800">
+    <div class="w-screen h-screen bg-gray-900">
+      <div class="h-screen w-full flex justify-center items-center from-black to-gray-500">
         <div id="particles-js" class="h-screen w-full absolute top-0 left-0 right-0"></div>
         <div class="flex flex-row justify-center items-center space-x-3">
           <div class="md:w-1/3 w-1/4">
@@ -20,30 +20,16 @@
         </div>
       </div>
     </div>
-
-    <div class="w-screen h-full bg-gray-700 py-12">
+    <div class="w-screen h-full bg-gray-900 py-12 transition-all">
       <h1 class="pb-8 pl-16 break-words text-white text-3xl md:text-5xl font-bold">Compétences</h1>
-      <div class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 md:auto-cols-max p-4 gap-2 px-12">
-        <Skill v-for="skill in $page.skills.edges" :key="skill.node.id" :skill=skill.node />
+      <div class="w-screen flex flex-row gap-4 p-4">
+        <SkillCategory v-for="skillCategory in $page.skillCategories.edges" :key="skillCategory.node.id" :skillCategory=skillCategory.node />
       </div>
     </div>
-
-    <div class="w-screen h-full bg-gray-700">
+    <div class="w-screen h-full transition-all">
       <h1 class="pb-8 pl-16 break-words text-white text-3xl md:text-5xl font-bold">Les derniers projets ajoutés</h1>
-      <div class="w-screen h-full overflow-x-scroll scrollbar-thight scroll-smooth overscroll-none">
-        <div class=" flex flex-nowrap gap-8 p-12">
-          <Project v-for="project in $page.projects.edges" :project=project.node :key="project.node.id" />
-          <div class="inline-block">
-            <div class="h-96 w-80 overflow-hidden rounded-3xl shadow-2xl transition bg-gray-800 flex flex-col gap-6 justify-center items-center">
-              <h2 class="text-white font-bold">En voir plus ?</h2>
-              <g-link to="/projects/" class=" shadow-md mx-auto p-2 bg-gray-800 shadow-2xl hover:bg-gray-700 hover:scale-125 transition rounded-3xl">
-                <i class="h-6 w-6">
-                  <ArrowRight class="h-6 w-6 text-white font-bold text-xl"/>
-                </i>
-              </g-link>
-            </div>
-          </div>
-        </div>
+      <div class="w-screen h-96 grid grid-cols-3 justify-items-center gap-4 px-4">
+        <Project v-for="project in $page.projects.edges" :project=project.node :key="project.node.id" />
       </div>
     </div>
 
@@ -52,13 +38,13 @@
 
 <script>
 
-import Skill from "../components/Skill.vue";
+import SkillCategory from "../components/SkillCategory.vue";
 import Project from "../components/Project";
 import ArrowRight from "../assets/svg/Arrow-Right.svg";
 
 export default {
   components: {
-    Skill,
+    SkillCategory,
     Project,
     ArrowRight
   },
@@ -136,22 +122,24 @@ export default {
 
 <page-query>
 query {
-  skills: allStrapiSkills {
-    edges {
-      node {
-        data {
-          name, array
-        }
-      }
-    }
-  },
-  projects: allStrapiProjects(limit: 5) {
+  projects: allProject(limit: 3) {
     edges {
       node {
         id,
         title,
         slug,
         thumbnail { url, width }
+      }
+    }
+  },
+  skillCategories: allSkillCategory {
+    edges {
+      node {
+        name,
+        skills {
+          name,
+          logoLink
+        }
       }
     }
   }

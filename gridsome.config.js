@@ -8,7 +8,7 @@ module.exports = {
   siteName: 'Dylan Delbauve',
   icon: './favicon.png',
   templates: {
-    StrapiProjects: [
+    Project: [
       {
         path: '/projects/project/:id',
         component: './src/templates/Project.vue'
@@ -25,20 +25,45 @@ module.exports = {
       }
     },
     {
-      use: '@gridsome/source-strapi',
+      use: '@gridsome/source-airtable',
       options: {
-        apiURL: 'https://cms.dylandelbauve.fr',
-        queryLimit: 1000, // Defaults to 100
-        contentTypes: ['skills', 'projects'],
-        singleTypes: [],
-        // Possibility to login with a Strapi user,
-        // when content types are not publicly available (optional).
-        loginData: {
-          identifier: '',
-          password: ''
-        }
-      }
-    }
+        apiKey: process.env.AIRTABLE_API_KEY, // required
+        base: process.env.AIRTABLE_BASE_ID, // required
+        tables: [
+            {
+                name: 'Projects', // required
+                typeName: 'Project', // required
+                select: {}, // optional,
+                links: [ // optional
+
+                ]
+            },
+            {
+              name: 'SkillCategories', // required
+              typeName: 'SkillCategory', // required
+              select: {}, // optional,
+              links: [ // optional
+                {
+                  fieldName: 'Skills',
+                  typeName: 'Skill'
+                }
+              ]
+            },
+            {
+              name: 'Skills', // required
+              typeName: 'Skill', // required
+              select: {}, // optional,
+              links: [ // optional
+                {
+                  fieldName: 'SkillCategories',
+                  typeName: 'SkillCategory'
+                }
+              ]
+            },
+        ],
+        tableName: 'Projects', // required
+      },
+    },
   ],
   chainWebpack: config => {
     const svgRule = config.module.rule('svg')
