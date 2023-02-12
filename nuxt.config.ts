@@ -7,7 +7,8 @@ export default defineNuxtConfig({
       '@nuxtjs/google-fonts',
       {
         families: {
-          'Noto+Sans': true
+          'Noto+Sans': true,
+          'Inter': true
         },
       },
     ],

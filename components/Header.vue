@@ -1,7 +1,7 @@
 <template>
     <div class="w-full h-16 bg-slate-900 flex items-center px-10 md:px-24 justify-between fixed">
         <div class="justify-self-center md:justify-self-auto">
-            <nuxt-link to="/" class="text-white font-menu text-xl font-bold hover:text-indigo-600 transition-colors">Delbauve</nuxt-link>
+            <nuxt-link to="/" class="text-white font-name text-xl font-bold hover:text-indigo-600 transition-colors">Delbauve</nuxt-link>
         </div>
         <div class="hidden  text-white md:flex gap-7">
             <nuxt-link class="text-bold font-menu hover:text-indigo-500 transition-colors" to="/">Accueil</nuxt-link>

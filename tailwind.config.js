@@ -11,7 +11,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'menu': ['Noto Sans']
+        'menu': ['Noto Sans'],
+        'name': ['Inter']
       }
     },
   },
