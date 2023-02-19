@@ -8,7 +8,8 @@ export default defineNuxtConfig({
       {
         families: {
           'Noto+Sans': true,
-          'Inter': true
+          'Inter': true,
+          'Open+Sans': true
         },
       },
     ],
