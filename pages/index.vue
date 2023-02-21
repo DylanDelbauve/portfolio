@@ -3,7 +3,7 @@
     <SidePanel ref="side"></SidePanel>
     <div class="h-full w-full bg-slate-800 flex">
         <div class="w-full md:w-4/5">
-            <section class="h-screen w-full p-40 flex justify-center items-center">
+            <section ref="main" id="main" class="h-screen w-full p-40 flex justify-center items-center">
                 <div class="flex flex-col gap-4">
                     <h1 class="font-sans text-7xl text-white">
                         Hey, I'm Dylan <br/>
@@ -11,13 +11,12 @@
                     </h1>
                     <h2 class="font-sans text-slate-500">Passionné par la photo et le développement, je m'égare parfois à la création de logo</h2>
                     <a class="bg-indigo-600 w-max px-12 py-3 shadow-lg text-white" href="">Voir mon CV</a>
-                    <button @click="side.open()">test</button>
                 </div>
             </section>
-            <section id="about" class="h-screen w-full flex justify-center items-center">
+            <section ref="about" id="about" class="h-screen w-full flex justify-center items-center">
                 <h1>A propos</h1>
             </section>
-            <section id="skills" class="h-min w-full p-24 lg:p-52">
+            <section ref="skills" id="skills" class="h-min w-full p-24 lg:p-52">
                 <h1 class="text-4xl md:text-5xl text-indigo-600">Compétences</h1>
                 <div class="bg-indigo-600 w-40 h-2 my-10"></div>
                 <div class="container mx-auto grid md:grid-cols-2 xl:grid-cols-4 gap-12">
@@ -53,12 +52,30 @@
             </section>
         </div>
         <div class="hidden md:flex md:w-1/5">
-
+          <Stepper :visible="visible"></Stepper>
         </div>
     </div>
     <Footer></Footer>
 </template>
 
 <script setup>
+    import scrollama from "scrollama";
+
     const side = ref(null);
+    const main = ref(null);
+    const about = ref(null);
+    const skills = ref(null);
+    const visible = ref('main');
+
+    onMounted(() => {
+      const scroller = scrollama();
+      scroller.setup({
+        step: 'section[id]'
+      })
+      .onStepEnter((response) => {
+        visible.value = response.element.id
+      })
+
+    })
+
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-16 bg-slate-900 flex items-center px-10 md:px-24 justify-between fixed">
+    <div class="w-full h-16 bg-slate-900 flex items-center px-10 md:px-24 justify-between fixed z-10">
         <div class="justify-self-center md:justify-self-auto">
             <nuxt-link to="/" class="text-white font-name text-xl font-bold hover:text-indigo-600 transition-colors">Delbauve</nuxt-link>
         </div>
