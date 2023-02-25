@@ -7,8 +7,8 @@
         </section>
         <section class="flex flex-col gap-2">
             <h1 class="font-menu text-2xl font-bold text-white">Réseaux</h1>
-            <a class="hover:text-indigo-500 transition-colors text-slate-400 text-menu font-semibold" href="https://www.linkedin.com/in/dylandelbauve/">Linkedin</a>
-            <a class="hover:text-indigo-500 transition-colors text-slate-400 text-menu font-semibold" href="https://github.com/DylanDelbauve">Github</a>
+            <a class="hover:text-indigo-500 transition-colors text-slate-400 text-menu font-semibold hover:after:content-['↗']" target="_blank" href="https://www.linkedin.com/in/dylandelbauve/">Linkedin</a>
+            <a class="hover:text-indigo-500 transition-colors text-slate-400 text-menu font-semibold hover:after:content-['↗']" target="_blank" href="https://github.com/DylanDelbauve">Github</a>
         </section>
         <section class="flex flex-col gap-2">
             <h1 class="font-menu text-2xl font-bold text-white">Liens utiles</h1>
