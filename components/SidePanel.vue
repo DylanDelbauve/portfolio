@@ -2,7 +2,7 @@
     <aside :class="isHide" class="bg-slate-900 fixed top-0 left-0 z-40 w-screen h-screen transition-transform flex flex-col p-12">
         <div class="flex justify-between">
             <h1 class="text-white font-name text-xl font-bold">Delbauve</h1>
-            <button class="text-white hover:bg-slate-700 rounded transition-colors" @click="close()"><Icon size="24px" name="material-symbols:close-rounded" /></button>
+            <button title="SideCloseBtn" class="text-white hover:bg-slate-700 rounded transition-colors" @click="close()"><Icon size="24px" name="material-symbols:close-rounded" /></button>
         </div>
         <div class="my-4 w-full h-0.5 bg-gradient-to-r from-gray-600"></div>
         <div class="h-full flex flex-col gap-7">
