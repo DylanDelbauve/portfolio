@@ -23,9 +23,7 @@ export default defineNuxtConfig({
     }
   },
   modules: [
-    '@nuxtjs/robots',
     "@nuxt/content",
-    '@nuxtjs/sitemap',
     "nuxt-icon",
     [
       '@nuxtjs/google-fonts',
