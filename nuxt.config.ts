@@ -19,7 +19,10 @@ export default defineNuxtConfig({
         { name: 'twitter:title', content: 'Dylan Delbauve | Portfolio'},
         { name: 'twitter:description', content: 'Développeur Full-stack'},
       ],
-      title: 'Dylan Delbauve | Portfolio'
+      title: 'Dylan Delbauve | Portfolio',
+      script: [
+        {async: true, src: 'https://umami.server.dlbv.fr/script.js', 'data-website-id': '9887f905-d69e-4c58-bc30-5acaa805f085'}
+      ]
     }
   },
   modules: [
