@@ -1,7 +1,7 @@
 <template>
   <Header @open-side-panel="side.open()"></Header>
   <SidePanel ref="side"></SidePanel>
-  <div class="h-full w-full bg-slate-900 flex">
+  <div class="h-full w-full bg-cyan-100 flex">
     <div class="w-full md:w-4/5">
       <section ref="main" id="main" class="h-screen w-full p-40 flex justify-center items-center">
         <div class="flex flex-col gap-4">
@@ -11,7 +11,7 @@
           </h1>
           <h2 class="font-sans text-slate-400">Passionné par la photo et le développement, je m'égare parfois à la
             création de logo</h2>
-          <a class="bg-indigo-400 w-max px-12 py-3 shadow-lg text-white" href="#">Voir mon CV</a>
+          <a class="bg-indigo-400 rounded border-4 border-[black] w-max px-12 py-3 shadow-solid hover:shadow-none text-white" href="#">Voir mon CV</a>
         </div>
       </section>
       <section ref="about" id="about" class="h-screen w-full p-24 lg:p-52">

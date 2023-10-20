@@ -14,6 +14,9 @@ module.exports = {
         'menu': ['Noto Sans'],
         'name': ['Inter'],
         'content': ['Open Sans']
+      },
+      boxShadow: {
+        'solid': 'black 10px 10px 0 0',
       }
     },
   },
