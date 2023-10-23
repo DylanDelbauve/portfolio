@@ -87,28 +87,28 @@
                 <div class="bg-black w-40 h-2 my-10"></div>
                 <div class="grid xl:grid-cols-2 gap-4 place-items-center">
                     <div class="h-min border-4 border-dark rounded-lg shadow-solid shadow-dark relative overflow-hidden group hover:shadow-none transition">
-                        <img src="/pictures/6842648.jpg" alt="nature autumn road">
+                        <NuxtImg format="webp" quality="80" src="/pictures/6842648.jpg" alt="nature autumn road" />
                         <a href="https://pixabay.com/photos/nature-autumn-road-fall-forest-6842648/" target="_blank" class="w-full h-full z-20 absolute top-0 left-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-black flex flex-col justify-between p-4 transition-opacity">
                             <div class="font-menu rounded-full w-min px-2 border-4 border-black bg-orange-400 self-end after:content-['↗']">Pixabay</div>
                             <div class="text-white w-max">nature autumn road</div>
                         </a>
                     </div>
                     <div class="h-min border-4 border-dark rounded-lg shadow-solid shadow-dark relative overflow-hidden group hover:shadow-none transition">
-                        <img src="/pictures/6470645.jpg" alt="hydrangea flower">
+                        <NuxtImg format="webp" quality="80" src="/pictures/6470645.jpg" alt="hydrangea flower" />
                         <a href="https://pixabay.com/photos/hydrangea-flower-pink-hydrangea-6470645/" target="_blank" class="w-full h-full z-20 absolute top-0 left-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-black flex flex-col justify-between p-4 transition-opacity">
                             <div class="font-menu rounded-full w-min px-2 border-4 border-black bg-orange-400 self-end after:content-['↗']">Pixabay</div>
                             <div class="text-white w-max">hydrangea flower</div>
                         </a>
                     </div>
                     <div class="h-min border-4 border-dark rounded-lg shadow-solid shadow-dark relative overflow-hidden group hover:shadow-none transition">
-                        <img src="/pictures/5373076.jpg" alt="poppy flower">
+                        <NuxtImg format="webp" quality="80" src="/pictures/5373076.jpg" alt="poppy flower" />
                         <a href="https://pixabay.com/photos/hydrangea-flower-pink-hydrangea-6470645/" target="_blank" class="w-full h-full z-20 absolute top-0 left-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-black flex flex-col justify-between p-4 transition-opacity">
                             <div class="font-menu rounded-full w-min px-2 border-4 border-black bg-orange-400 self-end after:content-['↗']">Pixabay</div>
                             <div class="text-white w-max">poppy flower</div>
                         </a>
                     </div>
                     <div class="w-full h-full border-4 border-dark rounded-lg shadow-solid shadow-dark relative overflow-hidden group hover:shadow-none transition flex flex-col items-center justify-center">
-                        <img class="h-full object-cover" src="/pictures/blured.png" alt="blur">
+                        <NuxtImg format="webp" quality="80" class="h-full object-cover" src="/pictures/blured.png" alt="blur" />
                         <div class="h-full w-full absolute z-10 backdrop-blur-lg flex justify-center items-center font-menu text-white">En voir plus ?</div>
                         <a href="https://pixabay.com/users/dylan_dlbv-15049403/" target="_blank" class="w-full h-full z-20 absolute top-0 left-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-black flex items-center justify-center p-4 transition-opacity">
                             <div class="bg-orange-400 border-4 border-dark hover:shadow-dark w-max px-12 py-3 hover:shadow-solid transition-all font-menu after:content-['↗']">Pixabay</div>
