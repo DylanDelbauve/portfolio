@@ -6,7 +6,7 @@ export default defineNuxtConfig({
                 '/_ipx/f_webp&q_80/pictures/6470645.jpg',
                 '/_ipx/f_webp&q_80/pictures/5373076.jpg',
                 '/_ipx/f_webp&q_80/pictures/6842648.jpg',
-                '/_ipx/f_webp&q_80/pictures/blur.jpg'
+                '/_ipx/f_webp&q_80/pictures/blur.png'
             ]
         }
     },
