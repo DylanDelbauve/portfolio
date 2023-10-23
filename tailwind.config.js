@@ -11,12 +11,16 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'menu': ['Noto Sans'],
+        'menu': ['Archivo Black'],
         'name': ['Inter'],
-        'content': ['Open Sans']
+        'content': ['Public Sans'],
+
       },
       boxShadow: {
-        'solid': 'black 10px 10px 0 0',
+        'solid': '#1f1f1f 5px 5px 0 0',
+      },
+      colors: {
+        'dark': '#1f1f1f'
       }
     },
   },
