@@ -4,13 +4,13 @@
     <div class="h-full w-full bg-blue-100 flex">
         <div class="w-full md:w-4/5">
             <section ref="main" id="main" class="h-screen w-full md:p-40 px-5 flex justify-center items-center">
-                <div class="w-full md:h-full rounded-xl border-4 border-dark shadow-solid shadow-dark bg-orange-200 flex justify-center items-center">
-                    <div class="flex flex-col gap-4">
-                        <h1 class="font-menu md:text-7xl">
+                <div class="w-full h-3/4 md:h-full rounded-xl border-4 border-dark shadow-solid shadow-dark bg-orange-200 flex justify-center items-center">
+                    <div class="flex flex-col gap-4 items-center">
+                        <h1 class="font-menu text-center text-5xl lg:text-7xl">
                             Hey, I'm Dylan <br/>
                             a Fullstack developer
                         </h1>
-                        <h2 class="font-content">Passionné par la photo et le développement, je m'égare parfois à la
+                        <h2 class="font-content px-10 text-center">Passionné par la photo et le développement, je m'égare parfois à la
                             création de logo</h2>
                         <a class="bg-orange-400 border-4 border-dark hover:shadow-dark w-max px-12 py-3 hover:shadow-solid transition-all font-menu"
                            href="#">Voir mon CV</a>
@@ -18,7 +18,7 @@
                 </div>
 
             </section>
-            <section ref="about" id="about" class="md:h-screen w-full p-24 lg:p-52">
+            <section ref="about" id="about" class="md:min-h-screen w-full p-24 lg:p-52">
                 <h1 class="text-4xl md:text-5xl font-menu">À propos</h1>
                 <div class="bg-black w-40 h-2 my-10"></div>
                 <div class="font-content flex flex-col gap-10">
@@ -50,10 +50,10 @@
                     </div>
                 </div>
             </section>
-            <section ref="skills" id="skills" class="h-min w-full p-24 lg:p-52">
+            <section ref="skills" id="skills" class="md:min-h-screen h-min w-full p-24 lg:p-52">
                 <h1 class="text-4xl md:text-5xl font-menu">Compétences</h1>
                 <div class="bg-black w-40 h-2 my-10"></div>
-                <div class="container mx-auto grid md:grid-cols-2 xl:grid-cols-4 gap-12">
+                <div class="flex flex-col 2xl:grid grid-cols-4 gap-12">
                     <div class="bg-rose-200 border-4 border-dark rounded-lg shadow-solid p-9 min-w-min">
                         <h2 class="text-lg font-bold font-menu my-2">Back-end</h2>
                         <p class="font-content break-words md:text-md">
@@ -85,7 +85,7 @@
             <section ref="pictures" id="pictures" class="md:min-h-screen md:max-h-max w-full p-24 lg:p-52 ">
                 <h1 class="text-4xl md:text-5xl font-menu">Photos</h1>
                 <div class="bg-black w-40 h-2 my-10"></div>
-                <div class="grid md:grid-cols-2 gap-4 place-items-center">
+                <div class="grid xl:grid-cols-2 gap-4 place-items-center">
                     <div class="h-min border-4 border-dark rounded-lg shadow-solid shadow-dark relative overflow-hidden group hover:shadow-none transition">
                         <img src="/pictures/6842648.jpg" alt="nature autumn road">
                         <a href="https://pixabay.com/photos/nature-autumn-road-fall-forest-6842648/" target="_blank" class="w-full h-full z-20 absolute top-0 left-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-black flex flex-col justify-between p-4 transition-opacity">
