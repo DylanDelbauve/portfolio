@@ -10,7 +10,7 @@
             <nuxt-link class="text-bold font-menu hover:text-orange-400 transition-colors" to="#pictures">Photos</nuxt-link>
         </div>
         <div class="md:hidden justify-self-end md:justify-self-auto">
-            <button @click="sideButtonClick()" title="SideOpenBtn" class="hover:bg-slate-700 rounded p-0.5 transition-colors"><Icon size="24px" name="material-symbols:menu-rounded" /></button>
+            <button @click="sideButtonClick()" title="SideOpenBtn" class="p-0.5"><Icon size="24px" name="material-symbols:menu-rounded" /></button>
         </div>
     </div>
 </template>
