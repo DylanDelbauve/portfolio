@@ -23,6 +23,9 @@
       htmlAttrs: {
           lang: 'fr'
       },
+      script: [
+          { src: 'https://umami.srv.dlbv.party/script.js', 'data-website-id' : '8ad29c19-84c9-4486-9ed9-f2aedfa323ed', async: true}
+      ]
   })
 
 </script>
